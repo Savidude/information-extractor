@@ -31,10 +31,10 @@ jobs:
           cp -r $GITHUB_WORKSPACE $project_dir
           cd $project_dir
 
-#      - name: Build
-#        env:
-#          GOPROXY: "https://proxy.golang.org"
-#        run: go build .
+      - name: Build
+        env:
+          GOPROXY: "https://proxy.golang.org"
+        run: go build .
 
       - name: Test
         run: go test ./...
