@@ -16,7 +16,7 @@ type SampleProduct struct {
 }
 
 var sampleProducts = []SampleProduct{
-	{"wso2am-3.0.0", "3.0.0.0", "full"},
+	{"wso2am-3.0.0", "3.0.0.1", "full"},
 	{"wso2ei-6.5.0", "6.5.0.0", "security"},
 	{"wso2is-5.9.0", "5.9.0.0", "private_user"},
 }
