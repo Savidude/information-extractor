@@ -1,0 +1,24 @@
+name: Test Pull Request
+
+on: pull_request
+
+jobs:
+  test-pr:
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Install Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+
+      - name: Checkout code
+          uses: actions/checkout@v1
+
+      - name: Test
+          run: go test ./...
