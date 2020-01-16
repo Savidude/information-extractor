@@ -10,7 +10,6 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
-#    runs-on: ubuntu-latest
 
     steps:
       - name: Install Go
