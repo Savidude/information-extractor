@@ -1,7 +1,7 @@
 {
-  "name": "copy-gopath",
+  "name": "copy-goroot",
   "version": "1.0.0",
-  "description": "Copy checked out project into $GOPATH",
+  "description": "Copy checked out project into $GOROOT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

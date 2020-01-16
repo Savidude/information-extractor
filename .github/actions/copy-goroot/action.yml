@@ -1,0 +1,5 @@
+name: 'Copy to GOROOT'
+description: 'Copy checked out project into $GOROOT'
+runs:
+  using: 'node12'
+  main: 'index.js'
