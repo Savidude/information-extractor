@@ -24,8 +24,13 @@ jobs:
       - name: Copy project to GOPATH
         uses: ./.github/actions/copy-goroot
 
-      - name: Change to project source directory
+      - name: Change to Unix project source directory
+        if: matrix.platform != 'windows-latest'
         run: cd ${GOROOT}/src/github.com/wso2/information-extractor
+
+      - name: Change to Windows project source directory
+        if: matrix.platform == 'windows-latest'
+        run: cd %GOROOT%\\src\\github.com\\wso2\\information-extractor
 
       - name: Test
         run: go test ./...

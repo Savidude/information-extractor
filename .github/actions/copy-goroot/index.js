@@ -1,10 +1,11 @@
-let fx = require('mkdir-recursive');
+const fx = require('mkdir-recursive');
 const copydir = require('copy-dir');
+const path = require('path');
 
 const goroot = process.env.GOROOT;
 const workspaceDir = process.env.GITHUB_WORKSPACE;
 
-let projectSource = goroot + "/src/github.com/wso2/information-extractor";
+var projectSource = path.join(goroot, "src", "github.com", "wso2", "information-extractor");
 fx.mkdir(projectSource, function (err) {
     console.log("Created project source " + projectSource);
 
