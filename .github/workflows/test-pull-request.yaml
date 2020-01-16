@@ -27,12 +27,8 @@ jobs:
       - name: Get cwd
         run: |
           echo "current directory: `pwd`"
-          echo "$GOROOT: `echo $GOROOT`"
+          echo "GOROOT: `echo $GOROOT`"
           echo "GITHUB_WORKSPACE: `echo $GITHUB_WORKSPACE`"
-          project_dir=/home/runner/go/src/github.com/wso2
-          mkdir -p $project_dir
-          cp -r $GITHUB_WORKSPACE $project_dir
-          cd $project_dir
 
       - name: Test
         run: go test ./...

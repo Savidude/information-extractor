@@ -7,5 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "copy-dir": "^1.2.0",
+    "mkdir-recursive": "^0.4.0"
+  }
 }
