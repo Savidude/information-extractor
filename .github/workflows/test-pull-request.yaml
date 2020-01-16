@@ -9,8 +9,8 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
 
-#    runs-on: ${{ matrix.os }}
-    runs-on: self-hosted
+    runs-on: ${{ matrix.os }}
+#    runs-on: self-hosted
 
     steps:
       - name: Install Go
@@ -20,6 +20,14 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v1
+
+      - name: Get cwd
+        run: echo "current directory: `pwd`"
+
+      - name: Build
+        env:
+          GOPROXY: "https://proxy.golang.org"
+        run: go build .
 
       - name: Test
         run: go test ./...
