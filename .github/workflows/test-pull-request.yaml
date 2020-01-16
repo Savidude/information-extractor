@@ -22,7 +22,8 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Get cwd
-        run: echo "current directory: `pwd`"
+        run: |
+          echo "current directory: `pwd`"
 
       - name: Build
         env:
