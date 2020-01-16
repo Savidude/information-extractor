@@ -4,7 +4,7 @@ const copydir = require('copy-dir');
 const goroot = process.env.GOROOT;
 const workspaceDir = process.env.GITHUB_WORKSPACE;
 
-let projectSource = goroot + "/src/github.com/wso2";
+let projectSource = goroot + "/src/github.com/wso2/information-extractor";
 fx.mkdir(projectSource, function (err) {
     console.log("Created project source " + projectSource);
 

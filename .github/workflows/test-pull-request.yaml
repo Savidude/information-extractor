@@ -25,13 +25,7 @@ jobs:
         uses: ./.github/actions/copy-goroot
 
       - name: Change to project source directory
-        run: |
-          ls ${GOROOT}
-          echo "..."
-          ls ${GOROOT}/src/github.com/wso2
-          echo "........."
-#          sudo ls ${GOROOT}/src/github.com/wso2/information-extractor
-#          sudo cd ${GOROOT}/src/github.com/wso2/information-extractor
+        run: cd ${GOROOT}/src/github.com/wso2/information-extractor
 
       - name: Test
         run: go test ./...
