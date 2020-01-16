@@ -6,7 +6,7 @@ const workspaceDir = process.env.GITHUB_WORKSPACE;
 
 let projectSource = goroot + "/src/github.com/wso2";
 fx.mkdir(projectSource, function (err) {
-    console.log("Created project source " + projectSource)
+    console.log("Created project source " + projectSource);
 
     copydir.sync(workspaceDir, projectSource, {
         utimes: true,

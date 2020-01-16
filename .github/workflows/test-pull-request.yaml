@@ -26,6 +26,9 @@ jobs:
 
       - name: Change to project source directory
         run: |
+          ls ${GOROOT}
+          ls ${GOROOT}/src/github.com/wso2
+          ls ${GOROOT}/src/github.com/wso2/information-extractor
           cd ${GOROOT}/src/github.com/wso2/information-extractor
 
       - name: Test
