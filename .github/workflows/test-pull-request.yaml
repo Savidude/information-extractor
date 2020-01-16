@@ -26,10 +26,12 @@ jobs:
 
       - name: Change to project source directory
         run: |
-          sudo ls ${GOROOT}
-          sudo ls ${GOROOT}/src/github.com/wso2
-          sudo ls ${GOROOT}/src/github.com/wso2/information-extractor
-          sudo cd ${GOROOT}/src/github.com/wso2/information-extractor
+          ls ${GOROOT}
+          echo "..."
+          ls ${GOROOT}/src/github.com/wso2
+          echo "........."
+#          sudo ls ${GOROOT}/src/github.com/wso2/information-extractor
+#          sudo cd ${GOROOT}/src/github.com/wso2/information-extractor
 
       - name: Test
         run: go test ./...
