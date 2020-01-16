@@ -1,2 +1,2 @@
-const gopath = process.env.GOPATH;
-console.log("GOPATH: " + gopath);
+const gopath = process.env.$GOROOT;
+console.log("$GOROOT: " + gopath);
