@@ -9,8 +9,8 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
 
-    runs-on: ${{ matrix.os }}
-#    runs-on: self-hosted
+#    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Install Go
@@ -21,6 +21,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
+      - name: Copy project to GOPATH
+        uses: ./.github/actions/copy-gopath
+
       - name: Get cwd
         run: |
           echo "current directory: `pwd`"
@@ -30,11 +33,6 @@ jobs:
           mkdir -p $project_dir
           cp -r $GITHUB_WORKSPACE $project_dir
           cd $project_dir
-
-      - name: Build
-        env:
-          GOPROXY: "https://proxy.golang.org"
-        run: go build cmd/information-extractor
 
       - name: Test
         run: go test ./...

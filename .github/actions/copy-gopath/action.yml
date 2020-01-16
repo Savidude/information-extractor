@@ -1,0 +1,5 @@
+name: 'Copy to GOPATH'
+description: 'Copy checked out project into $GOPATH'
+runs:
+  using: 'node12'
+  main: 'index.js'
