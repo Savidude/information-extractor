@@ -24,8 +24,8 @@ jobs:
       - name: Get cwd
         run: |
           echo "current directory: `pwd`"
-          echo "GOPATH: `GOPATH`"
-          echo "GITHUB_WORKSPACE: `GITHUB_WORKSPACE`"
+          echo "GOPATH: `echo $GOPATH`"
+          echo "GITHUB_WORKSPACE: `echo $GITHUB_WORKSPACE`"
 
       - name: Build
         env:
