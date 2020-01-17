@@ -24,7 +24,7 @@ jobs:
         uses: ./.github/actions/copy-goroot
 
       - name: Change to Unix project source directory
-        if: matrix.platform != 'windows-latest'
+        if: matrix.platform == 'macos-latest' || matrix.platform == 'ubuntu-latest'
         run: cd ${GOROOT}/src/github.com/wso2/information-extractor
 
       - name: Change to Windows project source directory
