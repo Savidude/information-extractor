@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
         with:
-          path: ./src/github.com/wso2
+          path: ./src/github.com/wso2/information-extractor
 
 #      - name: Copy project to GOROOT
 #        uses: ./.github/actions/copy-goroot
