@@ -36,7 +36,10 @@ jobs:
 #            $(pwd)"
 
       - name: Generate Artifacts
-        run: ./scripts/build.sh -t information-extractor -v 1.0.0 -f
+        run: |
+          pwd
+          ls
+          ./scripts/build.sh -t information-extractor -v 1.0.0 -f
 
       - uses: actions/upload-artifact@v1
         with:
