@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      GOPATH: ${{ runner.workspace }}
+      GOPATH: ${{ GITHUB_WORKSPACE }}
       GO111MODULE: off
 
     steps:
