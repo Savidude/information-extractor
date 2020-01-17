@@ -10,6 +10,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      GOPATH: ${{ runner.workspace }}
+      GO111MODULE: off
+
     steps:
       - name: Install Go
         uses: actions/setup-go@v1
@@ -18,21 +22,26 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v1
+        with:
+          path: ./src/github.com/${{ github.repository }}
 
-      - name: Copy project to GOROOT
-        uses: ./.github/actions/copy-goroot
+#      - name: Copy project to GOROOT
+#        uses: ./.github/actions/copy-goroot
 
-      - name: Change to project source directory
-        id: change_source
-        run: |
-          cd ${GOROOT}/src/github.com/wso2/information-extractor
-          echo "##[set-output name=project_source;] \
-            $(pwd)"
+#      - name: Change to project source directory
+#        id: change_source
+#        run: |
+#          cd ${GOROOT}/src/github.com/wso2/information-extractor
+#          echo "##[set-output name=project_source;] \
+#            $(pwd)"
 
       - name: Generate Artifacts
-        run: ./scripts/build.sh -t information-extractor -v 1.0.0 -f
+        run: |
+          ls
+          ./scripts/build.sh -t information-extractor -v 1.0.0 -f
 
       - uses: actions/upload-artifact@v1
         with:
           name: executable-artifacts
-          path: ${{ steps.change_source.outputs.project_source }}/build/target
+          path: build/target
+#          path: ${{ steps.change_source.outputs.project_source }}/build/target
