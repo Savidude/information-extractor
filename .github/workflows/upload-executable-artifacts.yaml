@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
         with:
-          path: ./src/github.com/${{ github.repository }}
+          path: ./src/github.com/wso2
 
 #      - name: Copy project to GOROOT
 #        uses: ./.github/actions/copy-goroot
@@ -36,9 +36,7 @@ jobs:
 #            $(pwd)"
 
       - name: Generate Artifacts
-        run: |
-          ls
-          ./scripts/build.sh -t information-extractor -v 1.0.0 -f
+        run: ./scripts/build.sh -t information-extractor -v 1.0.0 -f
 
       - uses: actions/upload-artifact@v1
         with:
