@@ -62,7 +62,7 @@ func scanRecursive(dirPath string) []string {
 	return files
 }
 
-func getMD5(filePath string) string {
+func generateMD5(filePath string) string {
 	var fileMD5String string
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -74,7 +74,8 @@ func getMD5(filePath string) string {
 	if _, err := io.Copy(hash, file); err != nil {
 		HandleErrorAndExit(fmt.Sprintf(UnableToGetMD5ofFile, filePath), err, FileSystemError)
 	}
-	hashInBytes := hash.Sum(nil)[:16]
+	hashInBytes := hash.Sum(nil)
 	fileMD5String = hex.EncodeToString(hashInBytes)
+	// TODO: convert to lowercase
 	return fileMD5String
 }

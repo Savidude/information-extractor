@@ -26,13 +26,13 @@ func HandleErrorAndExit(msg string, err error, exitCode int) {
 		inputTemplate = DefaultErrorTemplate
 	}
 	if err == nil {
-		t := ErrorTemplate{fmt.Sprintf(ToolName + ": %v", msg)}
+		t := ErrorTemplate{fmt.Sprintf(ToolName+": %v", msg)}
 		printTemplate(isDefaultTemplateEnabled, DefaultErrorTemplate, inputTemplate, t)
-		printf(os.Stderr, ToolName + ": %v\n", msg)
+		printf(os.Stderr, ToolName+": %v\n", msg)
 	} else {
-		t := ErrorTemplate{fmt.Sprintf(ToolName + ": %v reason: %v\n", msg, err.Error())}
+		t := ErrorTemplate{fmt.Sprintf(ToolName+": %v reason: %v\n", msg, err.Error())}
 		printTemplate(isDefaultTemplateEnabled, DefaultErrorTemplate, inputTemplate, t)
-		printf(os.Stderr, ToolName + ": %v reason: %v\n", msg, err.Error())
+		printf(os.Stderr, ToolName+": %v reason: %v\n", msg, err.Error())
 	}
 	os.Exit(exitCode)
 }

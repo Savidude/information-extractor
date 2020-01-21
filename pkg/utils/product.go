@@ -14,13 +14,13 @@ import (
 )
 
 type UpdateMedata struct {
-	UpdateLevel string `json:"update_level"`
+	UpdateLevel string `json:"update-level"`
 	Channel     string `json:"channel"`
 }
 
 type SetupInfo struct {
 	Product     string     `json:"product"`
-	UpdateLevel string     `json:"update_level"`
+	UpdateLevel string     `json:"update-level"`
 	Channel     string     `json:"channel"`
 	OS          string     `json:"os"`
 	Files       []FileData `json:"files"`
@@ -80,7 +80,7 @@ func GetFileData(productPath string) []FileData {
 	files := scanRecursive(productPath)
 	for _, file := range files {
 		relativeFilePath := strings.Replace(file, productPath+PathSeparator, "", -1)
-		fileMD5String := getMD5(file)
+		fileMD5String := generateMD5(file)
 
 		fileData := FileData{
 			File:    relativeFilePath,

@@ -6,7 +6,7 @@ package utils
 
 import "os"
 
-const ToolName string = "information-extractor"
+const ToolName string = "Information Extractor"
 
 const SetupInfoFilename string = "setup-info.json"
 
