@@ -1,4 +1,5 @@
 {
-	"update_level" : "5.9.0.0",
-	"channel" : "private_user"
+  "product": "wso2is-5.9.0",
+  "update-level": "5.9.0.0",
+  "channel": "private_user"
 }

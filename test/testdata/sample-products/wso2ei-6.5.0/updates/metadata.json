@@ -1,4 +1,5 @@
 {
-	"update_level" : "6.5.0.0",
-	"channel" : "security"
+  "product": "wso2ei-6.5.0",
+  "update-level": "6.5.0.0",
+  "channel": "security"
 }

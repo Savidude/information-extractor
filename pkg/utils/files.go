@@ -13,6 +13,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type FileData struct {
@@ -76,6 +77,6 @@ func generateMD5(filePath string) string {
 	}
 	hashInBytes := hash.Sum(nil)
 	fileMD5String = hex.EncodeToString(hashInBytes)
-	// TODO: convert to lowercase
+	fileMD5String = strings.ToLower(fileMD5String)
 	return fileMD5String
 }

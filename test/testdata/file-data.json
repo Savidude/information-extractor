@@ -1,26 +1,14 @@
 [
 	{
-		"File": "wso2am-3.0.0/updates/metadata.json",
-		"MD5Hash": "872203ab056ffed21f222f6ab1e554a6"
+		"file": "wso2am-3.0.0/updates/metadata.json",
+		"md5hash": "1bce390f0298932bbe9b16b43560458d"
 	},
 	{
-		"File": "wso2am-3.0.0/updates/product.txt",
-		"MD5Hash": "65d4cae092ae480a729251808fc5969e"
+		"file": "wso2ei-6.5.0/updates/metadata.json",
+		"md5hash": "28167bfc34ed686190db27a27dd5d6dd"
 	},
 	{
-		"File": "wso2ei-6.5.0/updates/metadata.json",
-		"MD5Hash": "31b9e13ded8c76b1b991ea4e7cf49300"
+		"file": "wso2is-5.9.0/updates/metadata.json",
+		"md5hash": "6b19634c15fb24988957def947aac162"
 	},
-	{
-		"File": "wso2ei-6.5.0/updates/product.txt",
-		"MD5Hash": "3b78d2a6010ddbeaad00511c5def0628"
-	},
-	{
-		"File": "wso2is-5.9.0/updates/metadata.json",
-		"MD5Hash": "a1ecf58dab5cd06666cf23039b5f6476"
-	},
-	{
-		"File": "wso2is-5.9.0/updates/product.txt",
-		"MD5Hash": "20abdfd2e6ace8c1a63788bcc913353c"
-	}
 ]

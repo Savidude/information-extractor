@@ -21,21 +21,18 @@ var sampleProducts = []SampleProduct{
 	{"wso2is-5.9.0", "5.9.0.0", "private_user"},
 }
 
-func TestGetProductName(t *testing.T) {
-	for _, product := range sampleProducts {
-		productName := GetProductName(sampleProductsPath + PathSeparator + product.name)
-		if productName != product.name {
-			t.Errorf("GetProductName() : FAILED, expected '%v' but got value '%v'", product.name, productName)
-		} else {
-			t.Logf("GetProductName() : PASSED, expected '%v' and got value '%v'", product.name, productName)
-		}
-	}
-}
-
 func TestGetUpdateInfo(t *testing.T) {
 	for _, product := range sampleProducts {
 		updateInfo := GetUpdateInfo(sampleProductsPath + PathSeparator + product.name)
 		t.Logf("Testing update info for %v", product.name)
+
+		if updateInfo.Product != product.name {
+			t.Errorf("GetUpdateInfo() : FAILED, expected product '%v' but got value '%v'",
+				product.name, updateInfo.Product)
+		} else {
+			t.Logf("GetUpdateInfo() : PASSED, expected product '%v' and got value '%v'",
+				product.name, updateInfo.Product)
+		}
 
 		if updateInfo.UpdateLevel != product.updateLevel {
 			t.Errorf("GetUpdateInfo() : FAILED, expected update level '%v' but got value '%v'",

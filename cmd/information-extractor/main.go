@@ -14,9 +14,9 @@ var version string
 var buildDate string
 
 func printHello() {
-	fmt.Printf("Running %v tool", utils.ToolName)
-	fmt.Printf("Version: %v", version)
-	fmt.Printf("Release Date: %v", buildDate)
+	fmt.Printf("Running %v tool\n", utils.ToolName)
+	fmt.Printf("Version: %v\n", version)
+	fmt.Printf("Release Date: %v\n", buildDate)
 }
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 	updateInfo := utils.GetUpdateInfo(productPath)
 
 	setupInfo := utils.SetupInfo{
-		Product:     utils.GetProductName(productPath),
+		Product:     updateInfo.Product,
 		UpdateLevel: updateInfo.UpdateLevel,
 		Channel:     updateInfo.Channel,
 		OS:          runtime.GOOS,
