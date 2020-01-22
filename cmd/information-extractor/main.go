@@ -17,6 +17,7 @@ func printHello() {
 	fmt.Printf("Running %v tool\n", utils.ToolName)
 	fmt.Printf("Version: %v\n", version)
 	fmt.Printf("Release Date: %v\n", buildDate)
+	fmt.Println()
 }
 
 func main() {
