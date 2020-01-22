@@ -14,6 +14,7 @@ import (
 )
 
 type UpdateMedata struct {
+	Product     string `json:"product"`
 	UpdateLevel string `json:"update-level"`
 	Channel     string `json:"channel"`
 }
@@ -34,26 +35,6 @@ func GetProductPath() string {
 	exPath := filepath.Dir(executable)
 	productPath := filepath.Dir(exPath)
 	return productPath
-}
-
-func GetProductName(productPath string) string {
-	updatesDir := productPath + PathSeparator + UpdatesDirectory
-	productFile := updatesDir + PathSeparator + ProductFile
-
-	file, err := os.Open(productFile)
-	if err != nil {
-		HandleErrorAndExit(fmt.Sprintf(UnableToOpenFileMsg, productFile), err, FileSystemError)
-	}
-	defer CloseFile(file)
-
-	productFileBytes, err := ioutil.ReadAll(file)
-	if err != nil {
-		HandleErrorAndExit(fmt.Sprintf(UnableToReadFileMsg, productFile), err, FileSystemError)
-	}
-
-	productName := string(productFileBytes)
-	productName = strings.TrimSpace(productName)
-	return productName
 }
 
 func GetUpdateInfo(productPath string) UpdateMedata {

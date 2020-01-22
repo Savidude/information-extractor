@@ -1,4 +1,5 @@
 {
-	"update_level" : "3.0.0.0",
-	"channel" : "full"
+  "product": "wso2am-3.0.0",
+  "update-level": "3.0.0.0",
+  "channel": "full"
 }
