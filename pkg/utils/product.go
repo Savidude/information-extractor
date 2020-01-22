@@ -40,6 +40,7 @@ func GetProductPath() string {
 func GetUpdateInfo(productPath string) UpdateMedata {
 	updatesDir := productPath + PathSeparator + UpdatesDirectory
 	metadataFileName := updatesDir + PathSeparator + MetadataFile
+	fmt.Printf(GettingUpdateInformation, metadataFileName)
 
 	metadataFile, err := ioutil.ReadFile(metadataFileName)
 	if err != nil {
@@ -56,6 +57,7 @@ func GetUpdateInfo(productPath string) UpdateMedata {
 }
 
 func GetFileData(productPath string) []FileData {
+	fmt.Printf(GettingFileData, productPath)
 	var filesData []FileData
 
 	files := scanRecursive(productPath)
