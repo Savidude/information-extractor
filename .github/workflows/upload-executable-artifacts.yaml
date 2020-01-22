@@ -28,6 +28,7 @@ jobs:
       - name: Generate Artifacts
         id: generate_artifacts
         run: |
+          ./.github/scripts/increment-version.sh ${{ secrets.GITHUB_TOKEN }}
           echo "##[set-output name=version;]$(make version)"
           make
 
