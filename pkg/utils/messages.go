@@ -1,7 +1,7 @@
 package utils
 
-const GettingUpdateInformation string = "retrieving update information from %v"
-const GettingFileData string = "getting file information in product %v"
+const GettingUpdateInformation string = "retrieving update information from %v\n"
+const GettingFileData string = "getting file information in product %v\n"
 
 const UnableToOpenFileMsg string = "unable to open file '%v'"
 const UnableToCloseFileMsg string = "unable to close file '%v'"
