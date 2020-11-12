@@ -47,4 +47,3 @@ if [[ ${PROJECT_VERSION} == ${GIT_VERSION} ]]; then
 
   pushChanges ${NEW_VERSION}
 fi
-
