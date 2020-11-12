@@ -37,8 +37,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.generate_artifacts.outputs.version }}
-          release_name: Release ${{ steps.generate_artifacts.outputs.version }}
+          tag_name: v${{ steps.generate_artifacts.outputs.version }}
+          release_name: Information Extractor ${{ steps.generate_artifacts.outputs.version }} Released!
 
       - uses: actions/upload-artifact@v2
         with:
