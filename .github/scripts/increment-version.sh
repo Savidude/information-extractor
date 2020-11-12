@@ -8,7 +8,7 @@ GITHUB_TOKEN=$1
 # -------------------------------------- Environment Variables --------------------------------------
 
 #get highest tag number
-GIT_VERSION=`git describe --abbrev=0 --tags`
+GIT_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
 PROJECT_VERSION=$(make version)
 
 function getNewVersion() {
