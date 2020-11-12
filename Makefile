@@ -8,7 +8,7 @@ PROJECT_ROOT := $(realpath $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 BUILD_DIRECTORY := build
 BUILD_ROOT := $(PROJECT_ROOT)/$(BUILD_DIRECTORY)
 MAIN_PACKAGE := information-extractor
-BUILD_VERSION := 1.1.0
+BUILD_VERSION := 1.1.1
 
 all: clean build-linux build-darwin build-windows
 
