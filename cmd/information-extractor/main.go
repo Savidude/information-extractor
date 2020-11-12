@@ -35,3 +35,4 @@ func main() {
 
 	utils.WriteToFile(setupInfo)
 }
+
