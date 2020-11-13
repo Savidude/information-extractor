@@ -18,7 +18,7 @@ jobs:
 
       - name: Set GOPATH
         run: |
-          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)"
+          echo "GOPATH="$(dirname $GITHUB_WORKSPACE) >> $GITHUB_ENV
 
       - name: Checkout code
         uses: actions/checkout@v1
