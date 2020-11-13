@@ -9,7 +9,7 @@ GITHUB_TOKEN=$1
 
 #get highest tag number
 GIT_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
-PROJECT_VERSION=$(make version)
+PROJECT_VERSION=v$(make version)
 
 function getNewVersion() {
   VERSION_BITS=(${GIT_VERSION//./ })
