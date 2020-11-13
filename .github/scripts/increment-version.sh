@@ -12,6 +12,7 @@ GIT_VERSION=`git describe --tags $(git rev-list --tags --max-count=1)`
 PROJECT_VERSION=v$(make version)
 
 function getNewVersion() {
+  echo "--------2---------"
   VERSION_BITS=(${GIT_VERSION//./ })
 
   MAJOR=${VERSION_BITS[0]}
@@ -44,9 +45,13 @@ echo "project version: ${PROJECT_VERSION}"
 echo "git version: ${GIT_VERSION}"
 
 if [[ ${PROJECT_VERSION} == ${GIT_VERSION} ]]; then
+  echo "--------1---------"
   NEW_VERSION=$(getNewVersion)
+  echo "new version: ${NEW_VERSION}"
+
   cat Makefile | sed s/"BUILD_VERSION := ${PROJECT_VERSION}"/"BUILD_VERSION := ${NEW_VERSION}"/ > tmp.txt
   mv tmp.txt Makefile
 
   pushChanges ${NEW_VERSION}
 fi
+echo "end"
