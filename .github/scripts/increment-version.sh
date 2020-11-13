@@ -40,6 +40,9 @@ function pushChanges() {
   git push "${remote_repository}" HEAD:master
 }
 
+echo "project version: ${PROJECT_VERSION}"
+echo "git version: ${GIT_VERSION}"
+
 if [[ ${PROJECT_VERSION} == ${GIT_VERSION} ]]; then
   NEW_VERSION=$(getNewVersion)
   cat Makefile | sed s/"BUILD_VERSION := ${PROJECT_VERSION}"/"BUILD_VERSION := ${NEW_VERSION}"/ > tmp.txt
