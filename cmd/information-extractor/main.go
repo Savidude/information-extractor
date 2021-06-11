@@ -17,6 +17,8 @@ func printHello() {
 	fmt.Printf("Running %v tool\n", utils.ToolName)
 	fmt.Printf("Version: %v\n", version)
 	fmt.Printf("Release Date: %v\n", buildDate)
+	fmt.Printf("OS\\Arch: %v\\%v", runtime.GOOS, runtime.GOARCH)
+	fmt.Printf("Go version: %v", runtime.Version())
 	fmt.Println()
 }
 
@@ -35,4 +37,3 @@ func main() {
 
 	utils.WriteToFile(setupInfo)
 }
-
